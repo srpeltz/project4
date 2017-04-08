@@ -7,7 +7,7 @@ var userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   admin: { type: Boolean, default: false },
-  recipes: [{ type: schema.Types.ObjectId, ref: 'Recipe' }],
+  // recipes: [{ type: schema.Types.ObjectId, ref: 'Recipe' }],
   image: String
 })
 

@@ -27,7 +27,9 @@ app.use(routes)
 
 app.use(addFailedAuthHeader)
 
-app.listen(3000)
+app.listen(port, function() {
+  console.log('server is ⚡️ on port ' + port)
+})
 
 function validateContentType(req, res, next) {
   var methods = ['PUT', 'PATCH', 'POST']
