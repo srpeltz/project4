@@ -10,7 +10,7 @@ var app         = express()
 //use a .env file to hide sensitive environment variables
 require('dotenv').config()
 
-mongoose.connect('mongodb://localhost:27017/recipeace')
+mongoose.connect('mongodb://localhost:27017/recipes')
 
 var routes = require('./config/routes')
 
@@ -28,7 +28,7 @@ app.use(routes)
 app.use(addFailedAuthHeader)
 
 app.listen(port, function() {
-  console.log('server is ⚡️ on port ' + port)
+  console.log('server is ⚡️  on port ' + port)
 })
 
 function validateContentType(req, res, next) {

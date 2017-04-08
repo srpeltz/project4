@@ -4,11 +4,7 @@ module.exports = User;
 
 var userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true},
-  firstName: String,
-  lastName: String,
-  admin: { type: Boolean, default: false },
-  // recipes: [{ type: schema.Types.ObjectId, ref: 'Recipe' }],
-  image: String
+  name: { type: String, required: true}
 })
 
 //add bcrypt hashing to model
