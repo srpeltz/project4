@@ -1,5 +1,7 @@
 var mongoose = require('mongoose')
 
+module.exports = User;
+
 var userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true},
   firstName: String,
@@ -23,5 +25,3 @@ userSchema.options.toJSON = {
 };
 
 var User = mongoose.model('User', userSchema);
-
-module.exports = User;
