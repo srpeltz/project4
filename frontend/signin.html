@@ -5,12 +5,13 @@
   <form ng-submit="vm.submitLogIn()" name="signInForm" novalidate>
     <div class="form-group">
       <label for="email">Email</label>
-      <input ng-model="vm.logIn.email" type="email" ng-model="email" name="email" required class="form-control" id="emailInput" placeholder="Email">
+      <input ng-model="vm.logIn.email" type="email" ng-model="email" name="email" required class="form-control" id="email" placeholder="Email">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input ng-model="vm.logIn.password" type="password" ng-model="password" name="password" required class="form-control" id="password" placeholder="Email">
     </div>
+    <button type="submit" ng-disabled="signInForm.$invalid" class="btn btn-default">Submit</button>
   </form>
 
   <p>If you are not a user yet, click <strong><a class="underline" ng-click="vm.toggleValue = !vm.toggleValue">here</a></strong> to sign up!

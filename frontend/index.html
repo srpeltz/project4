@@ -17,14 +17,11 @@
       <nav class="navbar nabar-default navbar-fixed-top">
         <div class="container">
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign In</button>
-          <button ng-show="vm.authService.isLogged" ng-click="vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
+          <button ng-show="vm.authService.isLoggedIn()" ng-click="vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
         </div>
       </nav>
 
     </header>
-    <hr>
-
-
 
   <section ui-view></section>
   </body>
