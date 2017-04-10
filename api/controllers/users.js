@@ -1,6 +1,13 @@
 var User = require("../models/User")
 
 
+function index(req, res) {
+  User.find({}, function(err, users) {
+    if(err) res.status(404).send(err)
+    res.status(200).send(users)
+  })
+}
+
 function create(req, res, next) {
   if (!req.body.password) {
     return res.status(422).send('Missing required fields');
@@ -43,7 +50,10 @@ function me(req, res, next) {
 };
 
 
+
+
 module.exports = {
+  index: index,
   create: create,
   me: me
 }
