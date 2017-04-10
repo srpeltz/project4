@@ -1,10 +1,8 @@
 var mongoose = require('mongoose')
 
-module.exports = User;
-
 var userSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true},
-  name: { type: String, required: true}
+  email: { type: String, required: true },
+  name:  { type: String, required: true }
 })
 
 //add bcrypt hashing to model
@@ -21,3 +19,5 @@ userSchema.options.toJSON = {
 };
 
 var User = mongoose.model('User', userSchema);
+
+module.exports = User;
