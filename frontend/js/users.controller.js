@@ -10,6 +10,7 @@ function UsersController($http) {
   self.setUser = setUser
   self.updateUser = updateUser
   self.currentUser = {}
+  self.deleteUser = deleteUser
 
   function getUser(user) {
     $http
@@ -25,6 +26,7 @@ function UsersController($http) {
 
   function setUser(user) {
     self.currentUser = user
+    // console.log(self.currentUser)
   }
 
   function updateUser(user) {
@@ -37,6 +39,12 @@ function UsersController($http) {
       self.currentUser = {}
   }
 
-
+  function deleteUser(user) {
+    $http
+      .delete('http://localhost:3000/api/me')
+      .then(function(res) {
+          getUser()
+      })
+  }
 
 }

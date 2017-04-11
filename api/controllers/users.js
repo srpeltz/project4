@@ -51,7 +51,7 @@ function me(req, res, next) {
 
 function update(req, res) {
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({_id: req.decoded._id}).exec()
     .then(function(user, err){
     if(err) res.status(404).send(err)
 
