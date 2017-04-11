@@ -17,6 +17,7 @@
     <header ng-controller="NavbarController as vm">
       <nav class="navbar nabar-default navbar-fixed-top container">
         <div class="container">
+          <span class="navbar-btn navbar-left"><a ui-sref="root" >Home</a> |</span>
           <a ui-sref="about" class="navbar-btn navbar-left">About</a>
           <a ui-sref="userProfilePage" ng-show="vm.authService.isLoggedIn()" class="navbar-btn navbar-left">Profile</a>
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign In</button>

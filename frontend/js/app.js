@@ -7,9 +7,9 @@ function RecipeRouter($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/")
 
   $stateProvider
-  .state('index', {
+  .state('root', {
     url:'/',
-    templateUrl: 'index.html'
+    templateUrl: 'root.html'
   })
   .state('about', {
     url: '/about',
@@ -24,6 +24,12 @@ function RecipeRouter($stateProvider, $urlRouterProvider) {
   .state('userProfilePage', {
     url: '/profile',
     templateUrl: 'userProfilePage.html',
+    controller: 'UsersController',
+    controllerAs: 'profileVm'
+  })
+  .state('userEdit', {
+    url: '/profile/edit',
+    templateUrl: 'userEdit.html',
     controller: 'UsersController',
     controllerAs: 'profileVm'
   })
