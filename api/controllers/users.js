@@ -49,11 +49,40 @@ function me(req, res, next) {
     });
 };
 
+function update(req, res) {
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user, err){
+    if(err) res.status(404).send(err)
+
+    if(req.body.email) user.email = req.body.email
+    if(req.body.name) user.name = req.body.name
+    if(req.body.password) user.password = req.body.password
+
+    user.save(function(err) {
+      if(err) res.status(500).send(err)
+
+      res.status(200).send(user)
+    })
+  })
+}
+
+function destroy(req, res) {
+  User
+    .remove({email: req.decoded.email}).exec()
+    .then(function(user, err){
+    if(err) res.status(500).send(err)
+
+    res.status(200).send({message: "User succesffuly deleted"})
+})
+}
 
 
 
 module.exports = {
   index: index,
   create: create,
-  me: me
+  me: me,
+  update: update,
+  destroy: destroy
 }

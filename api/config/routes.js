@@ -15,7 +15,8 @@ router.route('/api/token')
   .post(token.create)
 router.route('/api/me')
   .get(token.authenticate, usersController.me)
-  .patch(token.authenticate, usersController.me)
+  .patch(token.authenticate, usersController.update)
+  .delete(token.authenticate, usersController.destroy)
 
 
   module.exports = router
