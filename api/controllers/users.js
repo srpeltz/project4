@@ -41,7 +41,7 @@ function me(req, res, next) {
       res.json({
         success: true,
         message: 'Successfully retrieved user data.',
-        data: user
+        user: user
       });
     })
     .catch(function(err) {

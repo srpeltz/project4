@@ -10,12 +10,15 @@
     <script src="js/app.js"></script>
     <script src="js/signin.controller.js"></script>
     <script src="js/navbar.controller.js"></script>
+    <script src="js/users.controller.js"></script>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body ng-app="Recipes">
     <header ng-controller="NavbarController as vm">
-      <nav class="navbar nabar-default navbar-fixed-top">
+      <nav class="navbar nabar-default navbar-fixed-top container">
         <div class="container">
+          <a ui-sref="about" class="navbar-btn navbar-left">About</a>
+          <a ui-sref="userProfilePage" ng-show="vm.authService.isLoggedIn()" class="navbar-btn navbar-left">Profile</a>
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign In</button>
           <button ng-show="vm.authService.isLoggedIn()" ng-click="vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
         </div>
