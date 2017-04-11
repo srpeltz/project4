@@ -10,7 +10,16 @@ var app         = express()
 //use a .env file to hide sensitive environment variables
 require('dotenv').config()
 
-mongoose.connect('mongodb://localhost:27017/recipes')
+var dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/recipes'
+
+if(!process.env.MONGODB_URI) {
+  require('net').connect(27017, 'localhost').on('error', function() {
+    console.log('bow before mongod or whatever first')
+    process.exit(0)
+  })
+}
+
+mongoose.connect(dbUri)
 
 var routes = require('./config/routes')
 
