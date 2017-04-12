@@ -17,7 +17,8 @@
     "mongoose": "^4.9.3",
     "mongoose-bcrypt": "^1.4.2",
     "morgan": "^1.8.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.81.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,4 +1,4 @@
-angular.module('Recipes', [])
+angular.module('Recipes')
   .controller('RecipesController', RecipesController)
 
 RecipesController.$inject = ['RecipeFactory']

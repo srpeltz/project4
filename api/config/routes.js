@@ -4,6 +4,7 @@ var bodyParser      = require('body-parser')
 var methodOverride  = require('method-override')
 
 var usersController = require('../controllers/users')
+var recipesController = require('../controllers/recipes')
 var token           = require('./token_auth')
 
 
@@ -17,6 +18,10 @@ router.route('/api/me')
   .get(token.authenticate, usersController.me)
   .patch(token.authenticate, usersController.update)
   .delete(token.authenticate, usersController.destroy)
+
+//API routes
+router.route('/api/recipes')
+  .get(recipesController.index)
 
 
   module.exports = router
