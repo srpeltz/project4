@@ -22,8 +22,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
