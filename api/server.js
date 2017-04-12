@@ -6,6 +6,7 @@ var path        = require('path')
 var cors        = require('cors')
 var port        = process.env.PORT || 3000
 var app         = express()
+var frontend    = process.env.PWD + '/frontend/'
 
 //use a .env file to hide sensitive environment variables
 require('dotenv').config()
@@ -20,6 +21,8 @@ if(!process.env.MONGODB_URI) {
 }
 
 mongoose.connect(dbUri)
+
+app.use(express.static(frontend))
 
 var routes = require('./config/routes')
 
