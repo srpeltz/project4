@@ -9,7 +9,7 @@ function RecipesController(RecipeFactory) {
 
   RecipeFactory.index()
     .success(function(data) {
-      self.allRecipes = data
-      // console.log(JSON.parse(self.allRecipes.body))
+      self.allRecipes = JSON.parse(data.body)
+      // console.log(self.allRecipes)
     })
 }
