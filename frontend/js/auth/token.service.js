@@ -35,6 +35,7 @@
     function destroy() {
       $window.localStorage.removeItem(TOKEN_KEY);
       console.log("token destroyed, local storage: ", $window.localStorage);
+      $window.location.href = '#/'
     }
   }
 
