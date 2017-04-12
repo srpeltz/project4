@@ -1,8 +1,7 @@
 <h1>this is the root page</h1>
+<h3>Recipes!</h3>
 <div ng-controller="RecipesController as rcpCtrl">
-  <h3>Recipes!</h3>
   <ul ng-repeat="recipe in rcpCtrl.allRecipes">
     <li>{{recipe.recipes}}</li>
   </ul>
-
 </div>
