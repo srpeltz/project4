@@ -4,6 +4,8 @@
   "description": "<a href=\"https://trello.com/b/qLBdKunb/project-4\">Trello Board</a>",
   "main": "./api/server.js",
   "dependencies": {
+    "assert": "^1.4.1",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.3",
@@ -17,6 +19,7 @@
     "mongoose": "^4.9.3",
     "mongoose-bcrypt": "^1.4.2",
     "morgan": "^1.8.1",
+    "mpromise": "^0.5.5",
     "path": "^0.12.7",
     "request": "^2.81.0"
   },

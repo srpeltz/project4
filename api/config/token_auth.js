@@ -1,5 +1,4 @@
 var jwt = require('jsonwebtoken');
-
  var User = require('../models/User');
 
  module.exports = {
@@ -49,13 +48,15 @@ var jwt = require('jsonwebtoken');
    User
      .findOne({email: req.body.email}).exec()
      .then(function(user) {
+      //  console.log("About to generate token...")
        if (!user || !user.verifyPasswordSync(req.body.password)) {
          var message = 'User not found or password incorrect.';
          return res.status(403).json(message);
        }
 
        var token = generateJwt(user);
-
+       console.log(token)
+      //  console.log("Sending token...")
        res.json(token);
      });
  }
@@ -100,6 +101,7 @@ var jwt = require('jsonwebtoken');
  // ****************************** HELPERS ******************************
 
  function generateJwt(user, options) {
+   console.log(process.env.TOKEN_SECRET)
    return jwt.sign(
      extractPayload(user, options),
      process.env.TOKEN_SECRET,
