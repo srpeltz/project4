@@ -15,6 +15,6 @@ function RecipeFactory($http) {
   }
 
   function show(recipe) {
-    return $http.get()
+    return $http.get('/api/recipes/' + recipe._id)
   }
 }

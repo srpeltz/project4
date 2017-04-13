@@ -33,4 +33,10 @@ function RecipeRouter($stateProvider, $urlRouterProvider) {
     controller: 'UsersController',
     controllerAs: 'profileVm'
   })
+  // .state('showRecipe', {
+  //   url: '/recipe',
+  //   templateUrl: 'showRecipe.html',
+  //   controller: 'recipes.controller',
+  //   controllerAs: 'recipeVm'
+  // })
 }

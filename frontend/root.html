@@ -2,9 +2,15 @@
 <h3>Recipes!</h3>
 <div ng-controller="RecipesController as rcpCtrl">
   <ul ng-repeat="recipe in rcpCtrl.allRecipes">
-    <li>{{recipe.title}}</li>
+    <li ng-click="rcpCtrl.showRecipe(recipe)">{{recipe.title}}</li>
     <ul>
       <li>{{recipe.subtitle}}</li>
+      <li>{{recipe._id}}</li>
     </ul>
   </ul>
+
+  <div ng-if="rcpCtrl.selectedRecipe">
+    <p>{{rcpCtrl.selectedRecipe.title}}<p>
+  </div>
+
 </div>
