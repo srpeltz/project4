@@ -1,11 +1,11 @@
-var express         = require('express')
-var router          = express.Router()
-var bodyParser      = require('body-parser')
-var methodOverride  = require('method-override')
+var express           = require('express')
+var router            = express.Router()
+var bodyParser        = require('body-parser')
+var methodOverride    = require('method-override')
 
-var usersController = require('../controllers/users')
+var usersController   = require('../controllers/users')
 var recipesController = require('../controllers/recipes')
-var token           = require('./token_auth')
+var token             = require('./token_auth')
 
 
 //users routes
@@ -19,7 +19,7 @@ router.route('/api/me')
   .patch(token.authenticate, usersController.update)
   .delete(token.authenticate, usersController.destroy)
 
-//API routes
+//Recipes API routes
 router.route('/api/recipes')
   .get(recipesController.index)
 

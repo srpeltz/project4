@@ -54,7 +54,6 @@ function update(req, res) {
     .findOne({_id: req.decoded._id}).exec()
     .then(function(user, err){
     if(err) res.status(404).send(err)
-
     if(req.body.email) user.email = req.body.email
     if(req.body.name) user.name = req.body.name
     if(req.body.password) user.password = req.body.password

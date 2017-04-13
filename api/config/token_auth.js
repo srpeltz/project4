@@ -46,6 +46,7 @@ require('dotenv').config()
      var message = 'Missing required fields: email and password';
      return res.status(422).json(message);
    }
+
    User
      .findOne({email: req.body.email}).exec()
      .then(function(user) {
