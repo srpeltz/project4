@@ -22,6 +22,8 @@ router.route('/api/me')
 //Recipes API routes
 router.route('/api/recipes')
   .get(recipesController.index)
+router.route('/api/recipes/:id')
+  .get(recipesController.show)
 
 
   module.exports = router

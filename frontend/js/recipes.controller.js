@@ -1,4 +1,4 @@
-//********you only put the ", []" if you put the controller in your app.js********//
+//********you only put the ", []" in "angular.module('Recipes', [])" if you put the controller in your app.js********//
 angular.module('Recipes')
   .controller('RecipesController', RecipesController)
 
@@ -17,19 +17,13 @@ function RecipesController(RecipeFactory) {
 
   self.showRecipe = function(recipe) {
     self.loading = true
-    console.log('loading initial recipe info...')
-
+    // console.log('loading initial recipe info...')
     RecipeFactory.show(recipe)
       .success(function(data) {
-        console.log("getting data...")
-          self.selectedRecipe = data
-          console.log("Grabbing recipe from list")
-          RecipeFactory.getBody(self.selectedRecipe)
-            .success(function(recipe){
-              self.selectedRecipe.body = recipe.body
-
-              self.loading = false
-            })
+        // console.log("getting data...")
+          self.selectedRecipe = JSON.parse(data.body)
+          // console.log("Grabbing recipe from list")
+          console.log(self.selectedRecipe)
       })
   }
 }

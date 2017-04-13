@@ -1,15 +1,16 @@
-<h1>this is the root page</h1>
+
+
+
 <h3>Recipes!</h3>
 <div ng-controller="RecipesController as rcpCtrl">
   <ul ng-repeat="recipe in rcpCtrl.allRecipes">
     <li ng-click="rcpCtrl.showRecipe(recipe)">{{recipe.title}}</li>
     <ul>
       <li>{{recipe.subtitle}}</li>
-      <li>{{recipe._id}}</li>
     </ul>
   </ul>
 
-  <div ng-if="rcpCtrl.selectedRecipe">
+  <div ng-show="rcpCtrl.selectedRecipe">
     <p>{{rcpCtrl.selectedRecipe.title}}<p>
   </div>
 

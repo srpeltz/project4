@@ -14,7 +14,17 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  http('https://mise-api.herokuapp.com/recipes/' + req.params.id,
+    function(err, response, body) {
+      if (err) throw err
+      console.log(response)
+      res.json(response)
+    })
+}
+
 
 module.exports = {
-  index: index
+  index: index,
+  show: show
 }

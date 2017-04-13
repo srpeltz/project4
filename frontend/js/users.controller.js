@@ -18,7 +18,6 @@ function UsersController($http) {
       .get('/api/me')
     //once call is complete get user info
       .then(function(res) {
-        // console.log(res.data.user)
         self.currentUser = res.data.user
       })
   }
@@ -26,7 +25,6 @@ function UsersController($http) {
 
   function setUser(user) {
     self.currentUser = user
-    // console.log(self.currentUser)
   }
 
   function updateUser(user) {
