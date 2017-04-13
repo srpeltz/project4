@@ -15,7 +15,7 @@ function UsersController($http) {
   function getUser(user) {
     $http
     //calls api to get user info
-      .get('http://localhost:3000/api/me')
+      .get('/api/me')
     //once call is complete get user info
       .then(function(res) {
         // console.log(res.data.user)
@@ -31,7 +31,7 @@ function UsersController($http) {
 
   function updateUser(user) {
     $http
-      .patch('http://localhost:3000/api/me', self.currentUser)
+      .patch('/api/me', self.currentUser)
       .then(function(res) {
         getUser()
         console.log(res.data)
@@ -41,7 +41,7 @@ function UsersController($http) {
 
   function deleteUser(user) {
     $http
-      .delete('http://localhost:3000/api/me')
+      .delete('/api/me')
       .then(function(res) {
           getUser()
       })
