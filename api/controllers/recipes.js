@@ -9,7 +9,7 @@ function index(req, res) {
   http('https://mise-api.herokuapp.com/recipes',
    function(err, response, body) {
     if (err) throw err
-    console.log(response)
+    // console.log(response)
     res.json(response)
   })
 }
@@ -18,7 +18,7 @@ function show(req, res) {
   http('https://mise-api.herokuapp.com/recipes/' + req.params.id,
     function(err, response, body) {
       if (err) throw err
-      console.log(response)
+      // console.log(response)
       res.json(response)
     })
 }

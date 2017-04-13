@@ -1,17 +1,14 @@
-
-
-
 <h3>Recipes!</h3>
 <div ng-controller="RecipesController as rcpCtrl">
   <ul ng-repeat="recipe in rcpCtrl.allRecipes">
     <li ng-click="rcpCtrl.showRecipe(recipe)">{{recipe.title}}</li>
-    <ul>
-      <li>{{recipe.subtitle}}</li>
-    </ul>
   </ul>
 
   <div ng-show="rcpCtrl.selectedRecipe">
-    <p>{{rcpCtrl.selectedRecipe.title}}<p>
+      <h4>{{rcpCtrl.selectedRecipe.title}}</h4>
+      <button type="button" name="favorite" ng-click="">Add to Favorites!</button>
+    <h5>{{rcpCtrl.selectedRecipe.subtitle}}</h5>
+    <img ng-src="{{rcpCtrl.selectedRecipe.image_url}}">
+    <p>{{rcpCtrl.selectedRecipe.body}}</p>
   </div>
-
 </div>

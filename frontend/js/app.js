@@ -1,5 +1,5 @@
 angular
-  .module('Recipes', ['ui.router'])
+  .module('Recipes', ['ui.router', 'ui.bootstrap'])
   .config(RecipeRouter)
 
 function RecipeRouter($stateProvider, $urlRouterProvider) {

@@ -26,4 +26,7 @@ function RecipesController(RecipeFactory) {
           console.log(self.selectedRecipe)
       })
   }
+
+  
+
 }

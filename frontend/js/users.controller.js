@@ -1,10 +1,11 @@
 angular.module('Recipes')
   .controller('UsersController', UsersController)
 
-UsersController.$inject = ['$http']
+UsersController.$inject = ['$http', 'authService', '$state', "tokenService"]
 
-function UsersController($http) {
+function UsersController($http, authService, $state, token) {
   var self = this;
+  self.authService = authService
   self.all = []
   self.getUser = getUser
   self.setUser = setUser
@@ -42,6 +43,9 @@ function UsersController($http) {
       .delete('/api/me')
       .then(function(res) {
           getUser()
+          //this destroy token doesn't work yet
+          token.destroy();
+          $state.go('root')
       })
   }
 

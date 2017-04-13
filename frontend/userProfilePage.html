@@ -1,10 +1,18 @@
 
 <h1>This is the profile page</h1>
+<!-- this ng-show hides the div if the user is NOT logged in -->
 <div>
   <ul>
-    <li>{{profileVm.currentUser.email}}</li>
-    <li>{{profileVm.currentUser.name}}</li>
+    <li><strong>Email:</strong> {{profileVm.currentUser.email}}</li>
+    <li><strong>Name:</strong> {{profileVm.currentUser.name}}</li>
   </ul>
-</div>
 
 <a ui-sref="userEdit"><button>Edit</button></a>
+</div>
+
+<div>
+  Favrites
+  <ul>
+    <li></li>
+  </ul>
+</div>
