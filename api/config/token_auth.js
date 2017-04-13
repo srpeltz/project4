@@ -1,5 +1,6 @@
 var jwt = require('jsonwebtoken');
- var User = require('../models/User');
+var User = require('../models/User');
+require('dotenv').config()
 
  module.exports = {
    create:       create,
