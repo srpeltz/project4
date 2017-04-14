@@ -1,8 +1,6 @@
 ## Project 4
 
 <a href="https://trello.com/b/qLBdKunb/project-4">Trello Board</a>
-<br>
-<a href="https://github.com/srpeltz/project4">Github</a>
 
 #### Description
 This project is an aggregator for recipes for cooking! It will incorporates Mise's external API (thanks Gus!) that users can then view and favorite to their profile to save for later.
