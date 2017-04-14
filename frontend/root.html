@@ -6,9 +6,9 @@
 
   <div ng-show="rcpCtrl.selectedRecipe">
       <h4>{{rcpCtrl.selectedRecipe.title}}</h4>
-
-      <!-- if button is clicked where should it go? -->
-      <button type="button" name="favorite" ng-click="rcpCtrl.pushRecipe">Add to Favorites!</button>
+      <div ng-controller="UsersController as userCtrl">
+        <button type="button" name="favorite" ng-click="userCtrl.addRecipe(rcpCtrl.selectedRecipe)">Add to Favorites!</button>
+      </div>
 
     <h5>{{rcpCtrl.selectedRecipe.subtitle}}</h5>
     <img ng-src="{{rcpCtrl.selectedRecipe.image_url}}">

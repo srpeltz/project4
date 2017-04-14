@@ -57,6 +57,7 @@ function update(req, res) {
     if(req.body.email) user.email = req.body.email
     if(req.body.name) user.name = req.body.name
     if(req.body.password) user.password = req.body.password
+    if(req.body.favorites) user.favorites = req.body.favorites
 
     user.save(function(err) {
       if(err) res.status(500).send(err)

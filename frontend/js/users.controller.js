@@ -12,6 +12,7 @@ function UsersController($http, authService, $state, token) {
   self.updateUser = updateUser
   self.currentUser = {}
   self.deleteUser = deleteUser
+  self.addRecipe = addRecipe
 
   function getUser(user) {
     $http
@@ -36,6 +37,18 @@ function UsersController($http, authService, $state, token) {
         console.log(res.data)
       })
       self.currentUser = {}
+  }
+
+//Add recipe to users favorites
+  function addRecipe(recipe) {
+    self.currentUser.favorites.push(recipe)
+    console.log(recipe)
+    $http
+      .patch('/api/me', self.currentUser)
+      .then(function(res) {
+        getUser()
+        console.log(self.currentUser)
+      })
   }
 
   function deleteUser(user) {
