@@ -3,6 +3,7 @@ var mongoose = require('mongoose')
 var userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   name:  { type: String, required: true },
+  favorites: [],
   created_at: {type: Date, default: Date.now}
 })
 

@@ -30,11 +30,13 @@ MAJOR STRETCH GOAL is to connect with Gus' API 😏 and have his users custom re
 1. Clone/fork repo into your workspace
 2. Navigate locally to the root directory<br>
 `$ cd ~/project4`
-3. Install all the dependencies from the package json <br>
+3. Create you own .env file in the root of the project and enter a token secret like below.<br>
+'TOKEN_SECRET={YOUR SECRET}'
+4. Install all the dependencies from the package json <br>
 `$ npm install`
-4. Run nodemon <br>
+5. Run nodemon <br>
 `$ nodemon`
-5. Open your default browser and navigate to http://localhost:3000<br>
+6. Open your default browser and navigate to http://localhost:3000<br>
 
 
 #### ERD

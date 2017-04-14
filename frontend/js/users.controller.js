@@ -43,7 +43,6 @@ function UsersController($http, authService, $state, token) {
       .delete('/api/me')
       .then(function(res) {
           getUser()
-          //this destroy token doesn't work yet
           token.destroy();
           $state.go('root')
       })
