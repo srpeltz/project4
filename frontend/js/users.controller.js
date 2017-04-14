@@ -13,6 +13,7 @@ function UsersController($http, authService, $state, token) {
   self.currentUser = {}
   self.deleteUser = deleteUser
   self.addRecipe = addRecipe
+  self.deleteRecipe = deleteRecipe
 
   function getUser(user) {
     $http
@@ -29,6 +30,7 @@ function UsersController($http, authService, $state, token) {
     self.currentUser = user
   }
 
+  //use update
   function updateUser(user) {
     $http
       .patch('/api/me', self.currentUser)
@@ -39,18 +41,7 @@ function UsersController($http, authService, $state, token) {
       self.currentUser = {}
   }
 
-//Add recipe to users favorites
-  function addRecipe(recipe) {
-    self.currentUser.favorites.push(recipe)
-    console.log(recipe)
-    $http
-      .patch('/api/me', self.currentUser)
-      .then(function(res) {
-        getUser()
-        console.log(self.currentUser)
-      })
-  }
-
+  //delete user
   function deleteUser(user) {
     $http
       .delete('/api/me')
@@ -59,6 +50,29 @@ function UsersController($http, authService, $state, token) {
           token.destroy();
           $state.go('root')
       })
+  }
+
+  //Add recipe to users favorites
+  function addRecipe(recipe) {
+    self.currentUser.favorites.push(recipe)
+    console.log(recipe)
+    $http
+    .patch('/api/me', self.currentUser)
+    .then(function(res) {
+      getUser()
+      console.log(self.currentUser)
+    })
+  }
+
+  //Delete recipe from users favorites
+  function deleteRecipe(recipe) {
+    self.currentUser.favorites.splice(self.currentUser.favorites.indexOf(recipe), 1)
+    $http
+    .patch('/api/me', self.currentUser)
+    .then(function(res) {
+      getUser()
+      $state.reload()
+    })
   }
 
 }

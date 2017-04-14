@@ -26,16 +26,4 @@ function RecipesController(RecipeFactory) {
           console.log(self.selectedRecipe)
       })
   }
-
-  //push into favorites
-  // self.pushRecipe = function(getUser) {
-  //   UserFactory.me(user)
-  //   console.log(user)
-  //     .success(function(data) {
-  //       self.selectedRecipe = JSON.parse(data.body)
-  //       console.log(self.selectedRecipe)
-  //       user.favorites.push(self.selectedRecipe)
-  //     })
-  // }
-
 }

@@ -11,8 +11,18 @@
 </div>
 
 <div>
-  Favrites
-  <ul>
-    <li>{{profileVm.currentUser.favorites}}</li>
+  Favorites
+  <ul ng-repeat="favorites in profileVm.currentUser.favorites">
+    <li><strong>{{favorites.title}}</strong>
+      <br>
+        <i>{{favorites.subtitle}}</i>
+      <br>
+      <div ng-controller="UsersController as usersCtrl">
+       <button ng-click="usersCtrl.deleteRecipe(favorites)">X</button>
+     </div>
+      <br>
+        <img ng-src="{{favorites.image_url}}">
+    </li>
+
   </ul>
 </div>
