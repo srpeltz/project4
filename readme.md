@@ -1,19 +1,19 @@
 ## Project 4
 
 <a href="https://trello.com/b/qLBdKunb/project-4">Trello Board</a>
+<br>
+<a href="https://github.com/srpeltz/project4">Github</a>
 
 #### Description
-This project will be an aggregator for recipes for cooking! It will incorporate an external API that users can then search, favorite, comment, and use.
+This project is an aggregator for recipes for cooking! It will incorporates Mise's external API (thanks Gus!) that users can then view and favorite to their profile to save for later.
 
-It will incorporate one full CRUD model for users and additional features mentioned above. I would also like to trya and make an attempt at creating a SPA.
-
-I would like to attempt to make this mobile so I will make my API seperate and use Angular for this project.
+It will incorporates one full CRUD model for users and additional features mentioned above. This web app is also a SPA.
 
 #### Stretch
 
 I eventually want to implement custom recipes that users can create themselves and other users can create. I also want to implement comments and rating on recipes as well, so users can share their experiences.
 
-MAJOR STRETCH GOAL is to connect with Gus' API 😏 and have his users custom recipes searchable on my website.
+By the meet and hire I would also like to transfer this into a mobile app. 
 
 #### Technologies
 <ul>
@@ -45,5 +45,4 @@ MAJOR STRETCH GOAL is to connect with Gus' API 😏 and have his users custom re
 
 #### Wireframe
 ![Home_Page](./images/homepage.JPG)
-![Home_Page](./images/recipepage.JPG)
 ![Home_Page](./images/profilepage.JPG)

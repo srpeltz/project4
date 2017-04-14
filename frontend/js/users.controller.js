@@ -39,6 +39,7 @@ function UsersController($http, authService, $state, token) {
         console.log(res.data)
       })
       self.currentUser = {}
+      $state.go('userProfilePage')
   }
 
   //delete user
