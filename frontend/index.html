@@ -17,24 +17,25 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body ng-app="Recipes">
-    <header ng-controller="NavbarController as vm">
-    <nav class="navbar navbar-default ">
-        <div class="container-fluid">
-          <div><a ui-sref="root" class="navbar-brand">Recipe Collective</a></div>
-          <ul class="nav navbar-nav">
-            <li><a ui-sref="about" class="navbar-btn navbar-left">About</a></a></li>
-            <li><a ui-sref="userProfilePage" ng-show="vm.authService.isLoggedIn()" class="navbar-btn navbar-left">Profile</a></li>
-          </ul>
-          <ul class="nav navbar0nav navbar-right">
-            <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" class="navbar-btn navbar-right">Sign In</a></li>
-            <li><button ng-show="vm.authService.isLoggedIn()" ng-click="vm.authService.logOut()" class="navbar-btn navbar-right">Sign Out</button></li>
-          </ul>
+<header ng-controller="NavbarController as vm">
+  <nav class="navbar navbar-default ">
+    <div class="container-fluid">
+      <div><a ui-sref="root" class="navbar-brand">Recipe Collective</a></div>
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="about" class="navbar-btn navbar-left">About</a></a>
+        </li>
+        <li><a ui-sref="userProfilePage" ng-show="vm.authService.isLoggedIn()" class="navbar-btn navbar-left">Profile</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" class="navbar-btn navbar-right"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+        <li><a ng-show="vm.authService.isLoggedIn()" ng-click="vm.authService.logOut()" class="navbar-btn navbar-right">Sign Out</a></li>
+      </ul>
 
 
 
 
 
-        </div>
+    </div>
 
   </nav>
 </header>
