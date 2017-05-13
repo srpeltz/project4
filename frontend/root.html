@@ -1,17 +1,32 @@
-<h3>Recipes!</h3>
-<div ng-controller="RecipesController as rcpCtrl">
-  <ul ng-repeat="recipe in rcpCtrl.allRecipes">
-    <li ng-click="rcpCtrl.showRecipe(recipe)">{{recipe.title}}</li>
-  </ul>
+<div class="container col-sm-12">
 
-  <div ng-show="rcpCtrl.selectedRecipe">
-      <h4>{{rcpCtrl.selectedRecipe.title}}</h4>
+  <!-- recipe title -->
+  <h1 class="text-center">The Recipe Collective's Recipes</h1>
+  <div ng-controller="RecipesController as rcpCtrl">
+    <ul ng-repeat="recipe in rcpCtrl.allRecipes">
+      <li ng-click="rcpCtrl.showRecipe(recipe)"><h3>{{recipe.title}}</h3></li>
+    </ul>
+
+    <!-- recipe content -->
+    <!-- recipe subtitle -->
+    <div ng-show="rcpCtrl.selectedRecipe">
+      <h4>{{rcpCtrl.selectedRecipe.subtitle}}</h4>
       <div ng-controller="UsersController as userCtrl">
         <button type="button" name="favorite" ng-click="userCtrl.addRecipe(rcpCtrl.selectedRecipe)">Add to Favorites!</button>
       </div>
-
-    <h5>{{rcpCtrl.selectedRecipe.subtitle}}</h5>
-    <img ng-src="{{rcpCtrl.selectedRecipe.image_url}}">
-    <p>{{rcpCtrl.selectedRecipe.body}}</p>
+    <!-- recip details -->
+      <div class="container">
+        <div class="row">
+          <div class="row">
+            <div class="col-sm-6">
+              <img ng-src="{{rcpCtrl.selectedRecipe.image_url}}">
+            </div>
+            <div class="col-sm-5">
+              <p>{{rcpCtrl.selectedRecipe.body}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
