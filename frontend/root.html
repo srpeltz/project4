@@ -1,7 +1,7 @@
 <div class="container col-sm-12">
 
   <!-- recipe title -->
-  <h1 class="text-center">The Recipe Collective's Recipes</h1>
+  <h1 class="text-center recipe-title">The Recipe Collective's Recipes</h1>
   <div ng-controller="RecipesController as rcpCtrl">
     <ul ng-repeat="recipe in rcpCtrl.allRecipes">
       <li ng-click="rcpCtrl.showRecipe(recipe)"><h3>{{recipe.title}}</h3></li>
@@ -9,24 +9,26 @@
 
     <!-- recipe content -->
     <!-- recipe subtitle -->
-    <div ng-show="rcpCtrl.selectedRecipe">
+    <div ng-show="rcpCtrl.selectedRecipe" class="recipe-content container">
       <h4>{{rcpCtrl.selectedRecipe.subtitle}}</h4>
       <div ng-controller="UsersController as userCtrl">
         <button type="button" name="favorite" ng-click="userCtrl.addRecipe(rcpCtrl.selectedRecipe)">Add to Favorites!</button>
       </div>
     <!-- recip details -->
-      <div class="container">
+      <div class="container recipe-details">
         <div class="row">
           <div class="row">
             <div class="col-sm-6">
               <img ng-src="{{rcpCtrl.selectedRecipe.image_url}}">
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-5 offset-sm-1">
               <p>{{rcpCtrl.selectedRecipe.body}}</p>
             </div>
           </div>
         </div>
       </div>
+      <!-- end receipe details -->
     </div>
+    <!-- end recipe content  -->
   </div>
 </div>
