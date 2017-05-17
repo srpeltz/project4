@@ -3,8 +3,12 @@
   <!-- recipe title -->
   <h1 class="text-center recipe-title">The Recipe Collective's Recipes</h1>
   <div ng-controller="RecipesController as rcpCtrl">
+    <ul>
+
+
     <ul ng-repeat="recipe in rcpCtrl.allRecipes">
-      <li ng-click="rcpCtrl.showRecipe(recipe)"><h3>{{recipe.title}}</h3></li>
+      <li ng-click="rcpCtrl.showRecipe(recipe)"><h3>{{recipe.title}}</h3>
+      </li>
     </ul>
 
     <!-- recipe content -->
@@ -14,7 +18,7 @@
       <div ng-controller="UsersController as userCtrl">
         <button type="button" name="favorite" ng-click="userCtrl.addRecipe(rcpCtrl.selectedRecipe)">Add to Favorites!</button>
       </div>
-    <!-- recip details -->
+      <!-- recip details -->
       <div class="container recipe-details">
         <div class="row">
           <div class="row">
@@ -30,5 +34,8 @@
       <!-- end receipe details -->
     </div>
     <!-- end recipe content  -->
+    </ul>
+
+
   </div>
 </div>

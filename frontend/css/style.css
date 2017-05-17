@@ -20,7 +20,5 @@ ul {
 }
 
 .recipe-content {
-  border: 1px solid red;
-  border-radius: 8px;
   padding: 0 0 5px 8px;
 }

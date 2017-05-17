@@ -20,6 +20,7 @@ function RecipesController(RecipeFactory) {
     // console.log('loading initial recipe info...')
     RecipeFactory.show(recipe)
       .success(function(data) {
+        self.selectedRecipe = false
         // console.log("getting data...")
           self.selectedRecipe = JSON.parse(data.body)
           // console.log("Grabbing recipe from list")
